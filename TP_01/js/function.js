@@ -14,16 +14,16 @@ let masques = [
 let table = document.getElementById('table');
 console.log(table);
 
-for (let i = 0; i < masques.length; i++) {
+for (let line = 0; line < masques.length; line++) {
     let tr = document.createElement('tr');
     let td1 = document.createElement('td');
     let td2 = document.createElement('td');
-    let service = masques[i][0];
-    let qtte = masques[i][1]
+    let service = masques[line][0];
+    let qtte = masques[line][1]
     let td_label1 = document.createTextNode(service);
     td1.appendChild(td_label1);
     tr.appendChild(td1);
-    if (i % 2)  {
+    if (line % 2)  {
         tr.setAttribute('class', 'white')
     }else tr.setAttribute('class', 'gray')
     let td_label2 = document.createTextNode(qtte);
