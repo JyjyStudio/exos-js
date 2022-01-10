@@ -1,0 +1,24 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: moccasin;
+}
+table {
+    text-align: center;
+    margin: 1em;
+    border-collapse: collapse;
+}
+table, td, th, tr {
+    border: 1px black solid;
+}
+th {
+    width:50%;
+}
+.white {
+    background-color: white;
+}
+.gray {
+    background-color: lightgray;
+}
