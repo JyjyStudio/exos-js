@@ -8,7 +8,7 @@ let masques = [
     ['odontologie', 24],
     ['dermatologie', 0],
     ['cardiologie', 46],
-    ['traumatologie', 12]
+    ['traumatologie', 12],
 ];
 
 let table = document.getElementById('table');
