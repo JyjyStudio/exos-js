@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bitcoin-price.css">
+    <title>Bitcoin Price</title>
+</head>
+<body>
+    <div class="container">
+        <div class="bitcoin-price">
+            <h1>Prix du Bitcoin :</h1>
+            <div id="price">
+                <span id="price-label">XXXXX.XX</span> €
+            </div> 
+        </div>
+    </div>
+    <script>
+        // On crée une requete :
+        function recupererPrix() {  
+            const url = `https://blockchain.info/ticker`;
+            let requete = new XMLHttpRequest(); // Crée un objet
+            requete.open('GET', url); //1er paramètre: GET ou POST ; 2e paramètre: l'url
+            requete.responseType = 'json'; // nous attendons du Json
+            requete.send(); // nous envoyons notre requete
+            requete.onload = function() { // Dès qu'on recoit la reponse, cette fonction va s'executer
+                if(requete.readyState === XMLHttpRequest.DONE) { //requete terminée
+                    if(requete.status == 200) { //200 = ca c'est bien passé
+                        let reponse = requete.response; // on stock la réponse
+                        let prixEnEuros = reponse.EUR.last;
+                        console.log('Prix du Bitcoin en €: ', prixEnEuros);
+                        document.getElementById('price-label').textContent = prixEnEuros;
+                    }
+                    else {
+                        alert('Un problème est survenu, merci de réessayer plus tard.')
+                    }
+                }
+            }
+        }
+        recupererPrix();
+        setInterval(recupererPrix, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+body {
+    height: 95vh;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.bitcoin-price {
+    font-family: sans-serif;
+    text-align: center;
+}
+.bitcoin-price h1, #price {
+    font-size: 3em;
+}
