@@ -18,11 +18,11 @@ let priseRdv = (heure, minute) => {
         }
     }
 
-    if (minute >= 60) {
+    if (minute >= 60 || heure > 23 || heure < 0) {
         console.log('Veuillez verifier votre demande de rdv.');
     }
     else if (heure >= 8 && heure <= 16) {
-        if(heure == 16) {
+        if (heure == 16) {
             if (minute + dureeRdv <= minuteFinRdvMax) {
                 checkMinute();
                 if (minute < 10) console.log(`Votre rdv a bien été pris à ${heure}h0${minute}, il se terminera à ${finRdv}`)
@@ -47,6 +47,7 @@ contraintes :
     -on doit afficher l'heure de debut et fin du rdv
     -afficher une erreur si en dehors des heure de travail exemple 'Les RDV commencent à 8h' et 'Les RDV doivent etre pris avant 16h20'
     -formatter l'heure pour afficher par exemple 15h09 et non 15h9
+    -faire des demandes entre 0h et 24h et des minutes entre 0 et 60 (pas de demande à 38h78)
     -Pour tester la fonction: entrer en parametre 16h00, 16h10, 16h20, 16h30, 16h50, 15h40, 15h50, 15h55, 7h00, 7h50, 8h, 8h10, 8h50, 17h, 17h90 et verifier les valeurs
 */
-priseRdv(15, 50)
+priseRdv(27, 0)
