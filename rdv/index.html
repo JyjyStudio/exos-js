@@ -5,8 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prise de RDV</title>
+    <style>
+        body, html{margin : 0; font-family:  'Open Sans'} 
+        .container{text-align: center;}
+        #submit{margin-left: 1em;} 
+        #response {margin-top: 1em;}
+        .red {color: red;}
+        .green {color: green;}
+    </style>
+    <script src="function.js" defer></script>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Prise de RDV</h1>
+        <form id="form">
+            <label for="name">Heure</label>
+            <input type="number" alias="heure" name="heure" id="heure" min="0" max="23" value="8"/>
+            <label for="name">Minute</label>
+            <input type="number" alias="minute" name="minute" id="minute" min="0" max="59" value="00"/>
+            <input type="submit" id="submit">
+        </form>
+        <div id="response"></div>
+    </div>
 </body>
 </html>
