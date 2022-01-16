@@ -68,5 +68,3 @@ form.addEventListener('submit', (e) => {
 );
 
 
-
-priseRdv(11,20)
