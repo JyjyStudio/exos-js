@@ -18,6 +18,19 @@ let dureeRdv = 10;
 let messageRdvMax = `Les RDV doivent etre pris avant ${heureFinRdvMax}h${minuteFinRdvMax - dureeRdv}.`;
 let finRdv;
 
+let messages = !async function(){
+    let data = await fetch("locale/en.json")
+        .then((response) => response.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    
+    console.log(data.error.rdv);
+}();
+
 let priseRdv = (heure, minute) => { 
     let checkMinute = () => {
         if (minute + dureeRdv >= 60 && minute + dureeRdv < 70) {
@@ -32,7 +45,7 @@ let priseRdv = (heure, minute) => {
     }
 
     if (minute >= 60 || heure > 23 || heure < 0) {
-        response.innerHTML = `<p class="red">Veuillez verifier votre demande de rdv.</p>`;
+        response.innerHTML = `<p class="red">Veuillez verifier votre demande de RDV.</p>`;
     }
     else if (heure >= 8 && heure <= 16) {
         if (heure == 16) {
