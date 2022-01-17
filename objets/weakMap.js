@@ -9,4 +9,4 @@ let voitureA = {
 }
 
 weakMap.set(index, voitureA);
-console.log(weakMap)
+console.log(weakMap);

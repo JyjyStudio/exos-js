@@ -9,10 +9,10 @@ let voitureB = {
     constructeur : 'Renault',
     modele : 'Espace'
 }
-voitures.add(voitureA)
-voitures.add(voitureB)
+voitures.add(voitureA);
+voitures.add(voitureB);
 
-console.log(voitures)
+console.log(voitures);
 
 
 //methode 2 sans add en ajoutant voitureA et voitureB dans newWeakSet
@@ -26,4 +26,4 @@ let voitureB = {
 }
 
 let voitures = new WeakSet([voitureA, voitureB]);
-console.log(voitures)
+console.log(voitures);
