@@ -1,4 +1,4 @@
-// //Le plus grand chiffre
+//Le plus grand chiffre
 function maxNum(a, ...b) {
     console.log(`Le plus grand chiffre est ${Math.max(a, ...b)}.`);
 }
@@ -10,7 +10,7 @@ function minNum(a, ...b) {
 }
 minNum(3, 56, 20, 2, 21, 222);
 
-// //Addition avec le rest parameter
+//Addition avec le rest parameter
 function addition(...a) {
     return a.reduce((accumulator, number) => {
         return accumulator += number;
@@ -21,7 +21,7 @@ let exemple2 = addition(1, 2, 3, 4, 5); // 15
 console.log(exemple1);
 console.log(exemple2);
 
-// //fonction reduce v1
+//fonction reduce v1
 const getMapFromArray = data =>
     data.reduce((accu, item) => {
         // add object key to our object i.e. charmander: { type: 'water' }
@@ -53,7 +53,7 @@ console.log(getMapFromArray2);
 const personnes = [
     { prenom: "Jyhad", age: 31 },
     { prenom: "Toto", age: 26 },
-    { prenom: "Tata", age: 26 },
+    { prenom: "Claude", age: 26 },
     { prenom: "foo", age: 35 },
     { prenom: "bar", age: 42 }
 ];
@@ -61,7 +61,7 @@ const personnes = [
 const result = personnes.reduce((groupePersonnes, personnes) => {
     const age = personnes.age;
     if (groupePersonnes[age] == null) groupePersonnes[age] = [];
-    groupePersonnes[age].push(personnes);
+    groupePersonnes[age].push(personnes.prenom);
     return groupePersonnes;
 }, {});
 
