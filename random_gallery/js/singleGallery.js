@@ -18,9 +18,11 @@ function showPict(e) {
 }
 
 //pour reduire la photo onclick
-function closePict() {  
-    let bigImageContainer = document.getElementById('galleryContainer');
-    bigImageContainer.classList.toggle('visible');
+const closePict = function (e) { 
+    if(e.target === this) {
+        let bigImageContainer = document.getElementById('galleryContainer');
+        bigImageContainer.classList.toggle('visible');
+    }
 }
 
 //affiche le bon titre
@@ -42,5 +44,3 @@ for (let i = 0; i < gal2.length -2; i++) {
     } 
 }
 
-let url3 = window.location.search.get('id');
-console.log(url3)
