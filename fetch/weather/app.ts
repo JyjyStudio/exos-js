@@ -57,10 +57,13 @@ const getLocalWeather = async (position?:GeolocationPosition, city?:string) => {
     } catch(e) {alert(e)}
 }
 
-navigator.geolocation.getCurrentPosition(getLocalWeather);
+//Recuperation de la geolocalisation
+navigator.geolocation.getCurrentPosition(getLocalWeather, (error) => {
+    console.log(error);
+    alert(`${error.message}\nVeuillez activer la géolocalisation.`);
+});
 
 //fetch asked weather
-
 let formulaire = document.getElementById('form') as HTMLFormElement;
 let citySearch = document.getElementById('citySearch') as HTMLInputElement;
 formulaire.addEventListener('submit', (e)=>{
