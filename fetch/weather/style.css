@@ -3,16 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background: url('img/rain.png') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+#container{
+    height: 100vh;
 }
 #form{
     display: flex;
     flex-direction: column;
+}
+#form input:first-child {
     margin-top: 2em;  
 }
 #form input {
@@ -54,6 +52,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 #temperature p {
     margin-bottom: 1rem;

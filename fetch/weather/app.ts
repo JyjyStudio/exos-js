@@ -1,36 +1,26 @@
-const api_key = "";
+const api_key = "8266633b5adb2bad0058d3dc22e2adbc";
 
 //city
 let cityNameDiv = <HTMLElement>document.getElementById('cityName');
-let cityNameContent = <HTMLElement>document.createElement('p');
-cityNameContent.setAttribute('id', 'cityName');
 //temperature
 let temperatureDiv = <HTMLElement>document.getElementById('temperature');
-let temperatureIcon = <HTMLElement>document.createElement('p');
-temperatureIcon.innerHTML = '<img src="img/temperature.png" width=50>';
-temperatureDiv.appendChild(temperatureIcon);
-let temperature = document.createElement('div');
+temperatureDiv.innerHTML = '<img src="img/temperature.png" width=50>';
 //humidity
 let humidityDiv = <HTMLElement>document.getElementById('humidity');
-let humidityIcon = <HTMLElement>document.createElement('p');
-humidityIcon.innerHTML = '<img src="img/humidity.png" width=50>';
-humidityDiv.appendChild(humidityIcon);
-let humidity = document.createElement('div');
+humidityDiv.innerHTML = '<img src="img/humidity.png" width=50>';
 //wind
 let windDiv = <HTMLElement>document.getElementById('wind');
-let windIcon = <HTMLElement>document.createElement('p');
-windIcon.innerHTML = '<img src="img/wind.png" width=50>';
-windDiv.appendChild(windIcon);
-let wind = document.createElement('div');
+windDiv.innerHTML = '<img src="img/wind.png" width=50>';
 
 //Interface
 interface Meteo {
     name : string,
     main : {
-        temp : string,
-        humidity : string,
+        temp : number,
+        humidity : number,
     },
-    wind : {speed : string}
+    wind : {speed : number},
+    weather : [{main : string}]
 }
 
 //fetch local weather
@@ -42,17 +32,18 @@ const getLocalWeather = async (position?:GeolocationPosition, city?:string) => {
         let result = await fetch(url);
         if(result.ok) {
             let data:Meteo = await result.json();
-            cityNameContent.textContent = data.name;
-            cityNameDiv.appendChild(cityNameContent);
+            cityNameDiv.textContent = data.name;
             //temperature
-            temperature.textContent = `${data.main.temp} °C`;
-            temperatureDiv.appendChild(temperature);
+            temperatureDiv.textContent = `${data.main.temp} °C`;
             //humidity
-            humidity.textContent = `${data.main.humidity} %`;
-            humidityDiv.appendChild(humidity);
+            humidityDiv.textContent = `${data.main.humidity} %`;
             //wind
-            wind.textContent = `${data.wind.speed} Km/h`;
-            windDiv.appendChild(wind);
+            windDiv.textContent = `${Math.round(data.wind.speed*3.6)} km/h`;
+            //changement de background en fonction de la temperature
+            let container = document.getElementById('container') as HTMLElement;
+            if(data.main.temp > 20) container.style.background = "url(img/sun.png) no-repeat center center fixed" 
+            if(data.main.temp < 0) container.style.background = "url(img/snow.jpg) no-repeat center center fixed" 
+            if(data.weather[0].main == 'Clouds') container.style.background = "url(img/cloud.png) no-repeat center center fixed" 
         }else {throw 'Veuillez taper un nom de ville existant.'}
     } catch(e) {alert(e)}
 }
