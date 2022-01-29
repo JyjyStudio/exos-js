@@ -69,6 +69,5 @@ let citySearch = document.getElementById('citySearch') as HTMLInputElement;
 formulaire.addEventListener('submit', (e)=>{
     e.preventDefault();
     let cityAsked = citySearch.value
-    console.log(cityAsked);
     getLocalWeather(undefined, cityAsked);
 });
