@@ -3,3 +3,6 @@
 *.rar
 *json
 tests
+fetch/**/*.js
+fetch/weather/img
+fetch/weather/api_key.txt

@@ -1,4 +1,4 @@
-const api_key = "8266633b5adb2bad0058d3dc22e2adbc";
+const api_key = "";
 
 //city
 let cityNameDiv = <HTMLElement>document.getElementById('cityName');
