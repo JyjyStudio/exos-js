@@ -42,8 +42,8 @@ const getLocalWeather = async (position?:GeolocationPosition, city?:string) => {
             //changement de background en fonction de la temperature
             let container = document.getElementById('container') as HTMLElement;
             if(data.main.temp > 20) container.style.background = "url(img/sun.png) no-repeat center center fixed" 
-            if(data.main.temp < 0) container.style.background = "url(img/snow.jpg) no-repeat center center fixed" 
-            if(data.weather[0].main == 'Clouds') container.style.background = "url(img/cloud.png) no-repeat center center fixed" 
+            else if(data.main.temp < 0) container.style.background = "url(img/snow.jpg) no-repeat center center fixed" 
+            else if(data.weather[0].main == 'Clouds') container.style.background = "url(img/cloud.png) no-repeat center center fixed" 
         }else {throw 'Veuillez taper un nom de ville existant.'}
     } catch(e) {alert(e)}
 }
