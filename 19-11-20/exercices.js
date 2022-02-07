@@ -2,7 +2,6 @@
 
 //Par exemple, si je donne 5 en paramètres, alors ma fonction devra me calculer 5 + 4 + 3 + 2 + 1. Notre fonction devra donc nous retourner 15.
 
-
 function sum(number) {
     let result = 0;
     for(let i = 0; i <= number; i++) {
