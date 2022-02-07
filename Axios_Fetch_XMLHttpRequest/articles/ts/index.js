@@ -32,13 +32,15 @@ function displayArticlesV1(article) {
 function displayArticlesV2(article) {
     const template = document.getElementById('templateArticle');
     const clone = document.importNode(template.content, true);
-    const articleId = clone.querySelector('.article');
     const link = clone.getElementById('articleLink');
-    console.log(articleId);
-    console.log(link);
+    const articleTitle = clone.querySelector('.article h2');
+    const content = clone.querySelector('.article p');
+    const linkId = clone.querySelector('.article a');
     clone.getElementById('articleTitle').textContent = article.title;
     clone.getElementById('content').textContent = article.body;
-    articleId.id = `${article.id}`;
+    articleTitle.id = `article${article.id}`;
+    content.id = `content${article.id}`;
+    link.id = `link${article.id}`;
     link.href = `article.html?id=${article.id}`;
     container.appendChild(clone);
 }
