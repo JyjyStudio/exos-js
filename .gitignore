@@ -3,6 +3,6 @@
 *.rar
 *json
 tests
-fetch/**/*.js
-fetch/weather/img
-fetch/weather/api_key.txt
+Axios_Fetch_XMLHttpRequest/**/*.js
+Axios_Fetch_XMLHttpRequest/weather/img
+Axios_Fetch_XMLHttpRequest/weather/api_key.txt
