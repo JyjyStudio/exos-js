@@ -44,6 +44,7 @@ const getLocalWeather = async (position?:GeolocationPosition, city?:string) => {
             if(data.main.temp > 20) container.style.background = "url(img/sun.png) no-repeat center center fixed" 
             else if(data.main.temp < 0) container.style.background = "url(img/snow.jpg) no-repeat center center fixed" 
             else if(data.weather[0].main == 'Clouds') container.style.background = "url(img/cloud.png) no-repeat center center fixed" 
+            else container.style.background = "url(img/default.jpg) no-repeat center center fixed" 
         }else {throw 'Veuillez taper un nom de ville existant.'}
     } catch(e) {alert(e)}
 }

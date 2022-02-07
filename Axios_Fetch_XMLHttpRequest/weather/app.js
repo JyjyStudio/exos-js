@@ -35,6 +35,8 @@ const getLocalWeather = (position, city) => __awaiter(void 0, void 0, void 0, fu
                 container.style.background = "url(img/snow.jpg) no-repeat center center fixed";
             else if (data.weather[0].main == 'Clouds')
                 container.style.background = "url(img/cloud.png) no-repeat center center fixed";
+            else
+                container.style.background = "url(img/default.jpg) no-repeat center center fixed";
         }
         else {
             throw 'Veuillez taper un nom de ville existant.';
