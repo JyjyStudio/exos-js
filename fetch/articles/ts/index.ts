@@ -20,7 +20,7 @@ interface Article {
 
 function displayArticlesV1 (article:Article) {
     templateDiv.innerHTML += `
-        <div id="article" class="article">
+        <div id="article${article.id}" class="article">
             <h2 id="articleTitle">${article.title}</h2>
             <p id="content">${article.body}</p>
             <a href="article.html?id=${article.id}" id="articleLink">Voir l'article</a>
@@ -31,9 +31,15 @@ function displayArticlesV2 (article:Article) {
     const template = document.getElementById('templateArticle') as HTMLTemplateElement;
     const clone = document.importNode(template.content, true) as DocumentFragment;
     const link = clone.getElementById('articleLink') as HTMLLinkElement;
+    const articleTitle = clone.querySelector('.article h2') as HTMLElement;
+    const content = clone.querySelector('.article p') as HTMLElement;
+    const linkId = clone.querySelector('.article a') as HTMLElement;
 
     clone.getElementById('articleTitle')!.textContent = article.title;
     clone.getElementById('content')!.textContent = article.body;
+    articleTitle.id = `article${article.id}`;
+    content.id = `content${article.id}`;
+    link.id = `link${article.id}`;
     link.href = `article.html?id=${article.id}`;
 
     container.appendChild(clone);
