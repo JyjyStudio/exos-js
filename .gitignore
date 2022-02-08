@@ -6,3 +6,7 @@ tests
 Axios_Fetch_XMLHttpRequest/**/*.js
 Axios_Fetch_XMLHttpRequest/**/*.txt
 Axios_Fetch_XMLHttpRequest/weather/img
+juste_prix/**/*.js
+random_quote_generator/**/*.js
+spoiler_btn/*.js
+timer/*.js
