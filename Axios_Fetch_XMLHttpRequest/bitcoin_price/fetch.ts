@@ -1,6 +1,6 @@
-const url = `https://blockchain.info/ticker`;
-async function recupererPrix() {  
-    let requete = await fetch(url);
+const url2 = `https://blockchain.info/ticker`;
+async function recupererPrixViaFetch() {  
+    let requete = await fetch(url2);
     let data = await requete.json();
     if(requete.ok) {
         let prixEnEuros = data.EUR.last;
@@ -10,7 +10,5 @@ async function recupererPrix() {
         alert('Un problème est survenu, merci de réessayer plus tard.')
     }
 }
-recupererPrix();
-setInterval(recupererPrix, 5000);
-
-export {} //permet d'éviter le probleme des variables de même nom sur plusieurs fichiers ts
+recupererPrixViaFetch();
+setInterval(recupererPrixViaFetch, 5000);

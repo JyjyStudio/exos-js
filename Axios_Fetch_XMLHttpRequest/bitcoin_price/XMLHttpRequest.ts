@@ -1,7 +1,7 @@
-const url = `https://blockchain.info/ticker`;
+const url1 = `https://blockchain.info/ticker`;
 function recupererPrix() {  
     let requete = new XMLHttpRequest(); // Crée un objet
-    requete.open('GET', url); //1er paramètre: GET ou POST ; 2e paramètre: l'url
+    requete.open('GET', url1); //1er paramètre: GET ou POST ; 2e paramètre: l'url
     requete.responseType = 'json'; // nous attendons du Json
     requete.send(); // nous envoyons notre requete
     requete.onload = function() { // Dès qu'on recoit la reponse, cette fonction va s'executer
@@ -20,5 +20,3 @@ function recupererPrix() {
 }
 recupererPrix();
 setInterval(recupererPrix, 5000);
-
-export {} //permet d'éviter le probleme des variables de même nom sur plusieurs fichiers ts
