@@ -30,12 +30,12 @@ function Utilisateur(prenom, nom, age) {
 var jyhad = new Utilisateur("Jyhad", "Ben", 31);
 var foo = new Utilisateur("Foo", "Bar", 22);
 
-jyhad.sePresenter(); //Bonjour je m'appelle Jyhad Ben et j'ai 30 ans.
+jyhad.sePresenter(); //Bonjour je m'appelle Jyhad Ben et j'ai 31 ans.
 foo.sePresenter();   //Bonjour je m'appelle Foo Bar et j'ai 22 ans.
 
 foo.poste = "Etudiant"; // on ajoute un poste a foo sans modifier jyhad
 
-console.log(jyhad);    //Utilisateur {prenom: 'Jyhad', nom: 'Ben', age: 30, sePresenter: ƒ}
+console.log(jyhad);    //Utilisateur {prenom: 'Jyhad', nom: 'Ben', age: 31, sePresenter: ƒ}
 console.log(foo);      //Utilisateur {prenom: 'Foo', nom: 'Bar', age: 22, sePresenter: ƒ, poste: 'Etudiant'}
 
 function Logement (type, annee, placeDeParking, proprietaire) {
@@ -45,6 +45,6 @@ function Logement (type, annee, placeDeParking, proprietaire) {
     this.proprietaire = proprietaire
 }
 var appartementA = new Logement("studio", 2018, true, jyhad); 
-console.log(appartementA);  //Logement {type: 'studio', annee: 2018, placeDeParking: true, proprietaire: Utilisateur {prenom: 'Jyhad', nom: 'Ben', age: 30, sePresenter: ƒ}}
+console.log(appartementA);  //Logement {type: 'studio', annee: 2018, placeDeParking: true, proprietaire: Utilisateur {prenom: 'Jyhad', nom: 'Ben', age: 31, sePresenter: ƒ}}
 console.log(appartementA.proprietaire.prenom) // Jyhad
-appartementA.proprietaire.sePresenter() // Bonjour je m'appelle Jyhad Ben et j'ai 30 ans.
+appartementA.proprietaire.sePresenter() // Bonjour je m'appelle Jyhad Ben et j'ai 31 ans.
