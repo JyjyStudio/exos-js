@@ -35,14 +35,14 @@ const User = {
 }
 
 // let test = User.nomComplet; => TypeError: Cannot read properties of undefined (reading 'prenom') at nomComplet
-let test = User.nomComplet.bind(User); // => Je m'appelle Jyhad Ben.
+let test = User.nomComplet.bind(User); // => Je m'appelle Jyhad.
 test();
 
 //exemple 2: 
 
 this.valeur = "window";
 let monObjet = {
-    valeur : 'Objet',
+    valeur : "Objet",
     getValue : function() {
         console.log(this.valeur);
     }
